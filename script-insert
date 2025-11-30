@@ -1,0 +1,29 @@
+-- Povoamento da tabela Cliente
+INSERT INTO cliente (nome, email, telefone) VALUES
+('Ana Silva', 'ana.silva@email.com', '11999990001'),
+('João Pedro', 'joao.pedro@email.com', '11988880002'),
+('Mariana Costa', 'mariana.costa@email.com', '11977770003');
+
+-- Povoamento da tabela Destino
+INSERT INTO destino (nome, pais) VALUES
+('Paris', 'França'),
+('Gramado', 'Brasil'),
+('Lisboa', 'Portugal');
+
+-- Povoamento da tabela Pacote
+INSERT INTO pacote (titulo, preco, id_destino) VALUES
+('Romântico em Paris', 8999.90, 1),
+('Natal Luz em Gramado', 2499.00, 2),
+('City Tour em Lisboa', 4999.00, 3);
+
+-- Povoamento da tabela Reserva
+INSERT INTO reserva (id_cliente, id_pacote, data_reserva) VALUES
+(1, 1, '2025-01-15'),
+(2, 2, '2025-02-20'),
+(3, 3, '2025-03-11');
+
+-- Povoamento da tabela Pagamento
+INSERT INTO pagamento (id_reserva, valor, data_pagamento) VALUES
+(1, 8999.90, '2025-01-16'),
+(2, 2499.00, '2025-02-21'),
+(3, 4999.00, '2025-03-12');

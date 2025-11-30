@@ -1,0 +1,12 @@
+-- 1. Remove pagamento específico
+DELETE FROM pagamento
+WHERE id_pagamento = 3;
+
+-- 2. Remove reservas antigas
+DELETE FROM reserva
+WHERE data_reserva < '2025-02-01';
+
+-- 3. Remove cliente que não possui mais reservas
+DELETE FROM cliente
+WHERE id_cliente = 3
+  AND id_cliente NOT IN (SELECT id_cliente FROM reserva);

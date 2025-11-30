@@ -1,0 +1,14 @@
+-- 1. Atualiza telefone de um cliente
+UPDATE cliente 
+SET telefone = '11911112222'
+WHERE id_cliente = 1;
+
+-- 2. Atualiza preço de um pacote turístico
+UPDATE pacote
+SET preco = 2699.00
+WHERE titulo = 'Natal Luz em Gramado';
+
+-- 3. Corrige nome do destino
+UPDATE destino
+SET pais = 'França – União Europeia'
+WHERE nome = 'Paris';

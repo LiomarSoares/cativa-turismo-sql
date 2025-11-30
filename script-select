@@ -1,0 +1,26 @@
+-- 1. Seleciona todos os clientes
+SELECT * FROM cliente;
+
+-- 2. Busca clientes cujo nome começa com "A"
+SELECT nome, email 
+FROM cliente 
+WHERE nome LIKE 'A%';
+
+-- 3. Lista pacotes com seus destinos (JOIN)
+SELECT p.titulo AS pacote, d.nome AS destino, d.pais
+FROM pacote p
+JOIN destino d ON p.id_destino = d.id_destino;
+
+-- 4. Última reserva realizada (ORDER BY + LIMIT)
+SELECT * 
+FROM reserva
+ORDER BY data_reserva DESC
+LIMIT 1;
+
+-- 5. Total gasto por cada cliente (JOIN + GROUP BY)
+SELECT c.nome, SUM(pg.valor) AS total_gasto
+FROM cliente c
+JOIN reserva r ON c.id_cliente = r.id_cliente
+JOIN pagamento pg ON pg.id_reserva = r.id_reserva
+GROUP BY c.nome
+ORDER BY total_gasto DESC;
